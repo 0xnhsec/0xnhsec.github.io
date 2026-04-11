@@ -27,25 +27,25 @@
   }
 
   .dark {
-    --background: 222 47% 8%;
-    --foreground: 210 40% 95%;
-    --card: 222 47% 11%;
-    --card-foreground: 210 40% 95%;
-    --popover: 222 47% 11%;
-    --popover-foreground: 210 40% 95%;
-    --primary: 210 80% 65%;
-    --primary-foreground: 222 47% 8%;
-    --secondary: 222 30% 18%;
-    --secondary-foreground: 210 40% 95%;
-    --muted: 222 30% 18%;
-    --muted-foreground: 215 20% 60%;
-    --accent: 210 80% 65%;
-    --accent-foreground: 222 47% 8%;
-    --destructive: 0 62.8% 55%;
+    --background: 220 25% 8%;
+    --foreground: 220 20% 95%;
+    --card: 220 25% 10%;
+    --card-foreground: 220 20% 95%;
+    --popover: 220 25% 10%;
+    --popover-foreground: 220 20% 95%;
+    --primary: 217 70% 55%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 220 20% 18%;
+    --secondary-foreground: 220 20% 95%;
+    --muted: 220 20% 18%;
+    --muted-foreground: 220 15% 60%;
+    --accent: 217 70% 55%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 0 62.8% 50%;
     --destructive-foreground: 0 0% 98%;
-    --border: 222 30% 20%;
-    --input: 222 30% 20%;
-    --ring: 210 80% 65%;
+    --border: 220 20% 20%;
+    --input: 220 20% 20%;
+    --ring: 217 70% 55%;
   }
 }
 
@@ -63,4 +63,17 @@
   .text-gradient {
     @apply bg-clip-text text-transparent bg-gradient-to-r from-[#1e3a5f] to-[#2d5a87];
   }
+  
+  .dark .text-gradient {
+    @apply from-blue-400 to-cyan-400;
+  }
+}
+
+/* Smooth theme transition */
+html {
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+html * {
+  transition: background-color 0.2s ease, border-color 0.2s ease;
 }
