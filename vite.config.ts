@@ -5,7 +5,9 @@ import { inspectAttr } from 'kimi-plugin-inspect-react'
 
 // https://vite.dev/config/
 export default defineConfig({
-  base: './',
+  // Saat build di GitHub Actions, VITE_BASE_PATH = "/nama-repo/"
+  // Saat dev lokal, fallback ke "./" agar tetap bisa dipakai dengan npm run dev
+  base: process.env.VITE_BASE_PATH ?? './',
   plugins: [inspectAttr(), react()],
   resolve: {
     alias: {
